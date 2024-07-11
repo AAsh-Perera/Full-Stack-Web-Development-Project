@@ -1,0 +1,1079 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/**Styles for the general webpage**/
+/* Reset and default styles for everything */
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Barlow Condensed", Arial;
+}
+
+a {
+    color: white;
+}
+
+/*background styles*/
+html {
+    height: 100vh;
+    background: linear-gradient(to bottom, #05BFDB,#0c5270);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+main {
+    flex-grow: 1; /*ensures that the footer is at the bottom*/
+}
+
+/** Header styles **/
+#Header_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 15vh;
+    z-index: 99;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    transition: top 0.4s ease-in-out;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Navigation bar styles */
+nav {
+    background: linear-gradient(to bottom, black, rgb(10, 23, 36), rgba(14, 31, 48, 0.8));
+    height: 10vh; /* takes up 10% of the viewport*/
+    width: 100%; /*taked up the entire device width*/
+}
+
+.Navigation_bar_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
+
+/*Nav Bar list items and links styles*/
+nav li {
+    transition: all 0.15s ease-in-out;
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    text-shadow: 0px 5px 4px rgba(0, 0, 0, 0.4);
+}
+
+nav li a:hover {
+    border-bottom: 2px solid rgb(196, 67, 44);
+}
+
+/* Nav bar Logo styles */
+.Nav_logo {
+    padding-top: 2vh;
+    height: 7vh;
+    transition: all 0.15s ease-in-out;
+}
+
+.Nav_logo:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation list and list items styles */
+.Nav_links {
+    list-style: none;
+}
+
+.Nav_links li {
+    display: inline-block;
+    padding: 0 2vh;
+    opacity: 1;
+}
+
+/*this style will apply only to the active li, so make sure to change the class to the proper active page*/
+.Active {
+    border-bottom: 2px solid white;
+}
+
+/*Nav bar hover effects*/
+.Nav_links li:hover {
+    transform: scale(1.2);
+    
+}
+
+/*More menu bar styles*/
+.More_menu {
+    position: fixed;
+    top: 0;
+    right: -400px; /*starts from off the screen*/
+    height: 100vh;
+    width: 18%;
+    z-index: 999;
+    padding-top: 10vh;
+    padding-left: 3vh;
+    background-color: rgba(22, 34, 49, 0.8);
+    backdrop-filter: blur(10px);
+    transition: right 0.5s ease-out;
+}
+
+/*More menue list items and link styles*/
+.More_menu li {
+    display: block;
+    margin-top: 2vh;
+}
+
+.More_menu li a {
+    display: block;
+}
+
+/*More menu bar open styles*/
+.More_menu.open {
+    right: 0;
+}
+
+/*Content menu bar styles*/
+.Content_menu {
+    position: fixed;
+    top: 0;
+    right: 0px;
+    height: 100vh;
+    width: 18%;
+    z-index: 999;
+    padding-top: 10vh;
+    padding-left: 3vh;
+    background-color: rgba(22, 34, 49, 0.8);
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    transform: translateX(100%); /* makes it so that it start off the screen*/
+    opacity: 0;
+}
+
+/*Content menu list items and links styles*/
+.Content_menu li {
+    display: block;
+    margin-top: 2vh;
+}
+
+.Content_menu li a {
+    display: block;
+}
+
+/*Special style class that is used by the javascript function to open and close the side menu*/
+.Content_menu.open {
+    transform: translateX(0); /* Move onto the screen*/
+    opacity: 1;
+}
+
+/*this style class is used for uls (unordered lists) that contain links for side menues*/
+.Side_menu_links li:hover {
+    transform: scale(1.1);
+}
+
+/*targeting the first child of the side menu that is the X icon*/
+.Side_menu_links :nth-child(1):hover {
+    transform: scale(1.0);
+    opacity: 1;
+}
+
+/*X icon styles*/
+.X_icon {
+    opacity: 0.5;
+    transition: all 0.15s ease-in-out;
+}
+
+.X_icon:hover {
+    opacity: 1;
+}
+
+/* Gradient box styles. this should be an empty div that comes after the nav tag */
+.Gradient_box {
+    height: 3vh;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(14, 31, 48, 0.8), rgba(0,0,0,0));
+    display: flex;
+}
+
+/* Dropdown arrow styles */
+.Dropdown_arw::after {
+    content: "";
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+/**And thats all for the header styles**/
+
+
+/**footer styles**/
+/*footer container styles. this is the parent container for the footer content. In my case this was a div inside the footer tag*/
+.Footer_container {
+    background:linear-gradient(to bottom, #0c5270ea, black);
+    height: 62vh;
+    width: 100%;
+    display: block;
+}
+
+/*Styles for the headings in the footer*/
+.Footer_heading {
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 2vh;
+}
+
+/*Styles for the pargaraph tags in the footer*/
+/*This is a <P> element*/
+.Footer_para {
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-bottom: 2vh;
+}
+
+/*Styles for the hr lins in the footer*/
+.Footer_hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 0 5vh;
+}
+
+/*back to top row styles, this is a div that contains the btt link*/
+.Back_tt_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+}
+
+/*Styles for the btt link*/
+.Btt_link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    opacity: 0.5;
+    align-items: center;
+    transition: all 0.15s ease-in-out;
+}
+
+.Btt_link:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/*footer items row styles, this is the div that contains the three main secotions of the footer*/
+.Items_row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2vh;
+}
+
+/*Styles for the 3 imediate children divs of the Items_row div */
+.Items_row > div {
+    flex: 1;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+/*Child 01: Learn more section*/
+/*inside this section there is a <section> element with the class Learn_more_img_section, this contains the two images as links*/
+.Learn_more_section {
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
+
+/*Learn More Immage section styles*/
+.Learn_more_img_section {
+    display: inline-block;
+    margin: 2vh 0;
+}
+
+/*Styles for the section*/
+.Learn_more_img_section img {
+    display: inline-block;
+    width: 30%;
+    border-radius: 2vh;
+    margin-right: 2vh;
+    opacity: 0.8;
+    transition: all 0.15s ease-in-out;
+}
+
+.Learn_more_img_section img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/*Learn more paragraph styles*/
+.Learn_more_info_section p {
+    font-size: 16px; 
+    text-align: justify;
+    opacity: 0.5;
+}
+
+/*Child 02: The Contact section, this is where users can leave their contact info with us*/
+/*Contact section styles*/
+.Contact_section {
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
+
+.Contact_section label {
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+/*is a <form> element with the class "Contact_form"*/
+/*Contact form input feild styles*/
+.Contact_form input {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 17px;
+    text-indent: 20px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.15s ease-in-out;
+}
+
+.Contact_form input:hover {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.Contact_form input:focus {
+    color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/*input feild placeholder styles*/
+.Contact_form input::placeholder {
+    text-indent: 20px;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 300;
+    font-style: italic;
+}
+
+.Contact_form input:hover::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.Contact_form input:focus::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/*submit button styles, this is not a <button> element its a <input> element with type "submit"*/
+.Contact_form input[type="submit"] {
+    background-color: rgb(196, 67, 44);
+    width: 100px;
+    text-indent: 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.7;
+    transition: all 0.15s ease-in-out;
+}
+
+.Contact_form input[type="submit"]:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.Contact_form input[type="submit"]:active {
+    transform: scale(1);
+    opacity: 0.7;
+}
+
+/*Child 03: the feed back section, pretty simple stuff*/
+.Feedback_section {
+    margin-left: 3vh;
+    margin-right: 3vh;
+    text-align: center;
+}
+/*send feedback btn styles*/
+.Feedback_btn {
+    background-color: rgb(196, 67, 44);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1px;
+    border: none;
+    height: 50px;
+    width: 175px;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 5%;
+    opacity: 0.7;
+    transition: all 0.15s ease-in-out;
+}
+
+.Feedback_btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/*Final row of the footer*/
+/*Page Editor Row Styles*/
+.Page_editor_row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*the style targets all <p> elements in the parent container*/
+.Page_editor_row > p {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.5;
+    margin-top: 2vh;
+}
+/**Thats all for the footer styles**/
+
+/**Styles for the Main Section**/
+/*main styles*/
+.BG_vid_01 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/*target the video one using the id*/
+video#Vid_01 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will ensure that the video covers the available space without being stretched */
+    transform: scale(1.08);
+}  
+
+/*div styles for all divs in the main section*/
+main > section > div {
+    position: relative;
+  }
+/*spacer for the home screen*/
+.HomSc_spacer_01 {
+    height: 88vh;
+}  
+
+.Scroll_dwn_btn_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Scroll_dwn_btn {
+    height: 8vh;
+    margin-bottom: 10vh;
+    border-radius: 4vh;
+    opacity: 0.4;
+    transition: all 0.25s ease-in-out;
+}
+
+.Scroll_dwn_btn:hover {
+    opacity: 7;
+}
+
+/**Mission section styles**/
+.Mission_div {
+    background: linear-gradient(to bottom, #40A2D8, #75c6bc);
+    width: 100%;
+    height: 76vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 3vh rgba(20, 41, 73, 1);
+    margin-top: 2vh;
+}
+/*Mission slide show styles*/
+/*reference from w3schools.com at: https://www.w3schools.com/howto/howto_js_slideshow.asp*/
+.Mission_img_slideshow_div {
+    position: relative;
+    margin: 0 5vh;
+    width: 100%;
+    overflow: hidden;
+}
+.Slides {
+    display: none;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.Slides>img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
+
+/*Mission text div styles*/
+.Mission_text_div {
+    margin-right: 10vh;
+    margin-left: 5vh;
+}
+
+.Mission_text_div>h2 {
+    font-size: 40px;
+    opacity: 0.8;
+}
+
+.Mission_text_div>hr {
+    width: 20%;
+    margin: 1vh 0;
+}
+
+.Mission_text_div>h1 {
+    font-size: 75px;
+}
+
+.Mission_text_div>p {
+    font-size: 25px;
+    margin-top: 10vh;
+    opacity: 0.8;
+}
+
+/**Gallery section styles**/
+.Gallery_section {
+    background-color: #FFECD6;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../Assets/Home Page Assets/Imgs/Backgrounds/Beach-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*Gallery section text styles*/
+.Gallery_section_text_div h2 {
+    color: #484A7D;
+    margin-top: 36vh;
+    font-size: 65px;
+    margin-left: 10vh;
+    margin-bottom: 3vh;
+}
+
+.Gallery_section_text_div a {
+    margin-left: 10vh;
+    font-size: 35px;
+    color: #0c5270;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.Gallery_section_text_div a:hover {
+    text-decoration: underline;
+}
+
+.Gallery_section_div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*Gallery section image slider styles*/
+.Image_slider {
+    max-width: 100vw;
+    margin: 15vh 10vh 15vh 5vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Slider_list {
+    width: max-content;
+
+}
+
+.Slider_list img {
+    border-radius: 3vh;
+    width: 60vw;
+    max-width: 100vw;
+    object-fit: cover;
+    transition: all 1.5s ease-in-out;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+}
+/*div containing the imgs*/
+.Slider_item {
+    display: none;
+    transition: all 1.5s ease-in-out;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/*Next and Previous Buttons styles*/
+.Slider_buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+    height: 100%;
+    position: absolute;
+}
+
+.Slider_buttons button {
+    margin: 0 2vw;
+    background-color: whitesmoke;
+    color: black;
+    width: 7vh;
+    height:7vh;
+    border: none;
+    border-radius: 4vh;
+    font-size: 25px;
+    font-family: monospace;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transform: scale(0.9);
+    box-shadow: 0px 0px 10px black;
+    transition: all 0.15s ease-in-out;
+}
+
+.Slider_buttons button:hover {
+    opacity: 0.8;
+    transform: scale(1);
+}
+
+.Slider_buttons button:active {
+    opacity: 1; 
+}
+
+/*Slider image dots style*/
+.Slider_dots_div {
+position: absolute;
+bottom: 15vh;
+}
+
+.Slider_dots {
+    color: whitesmoke;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.Slider_dots li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 10px black;
+    opacity: 0.7;
+    margin: 1vw;
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.Slider_dots li.active {
+    width: 25px;
+}
+/**Thats all the gallery section styles**/
+
+/**Shop section Styles start now**/
+/*The section housing whole shop section*/
+.Shop_section {
+    height: 130vh;
+    display: flex;
+    background-color: #4fddf3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Shop_section h2 {
+    margin: 8vh 0 2vh 0;
+    color: #0c5270;
+    font-size: 65px;
+}
+
+.Shop_bg_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+}
+
+.Shop_main_div, .Shop_text_div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 99vw;
+}
+
+.Shop_text_div > p {
+    color: #0c5270;
+    font-size: 30px;
+}
+
+.Shop_section hr {
+    width: 40%;
+    margin: 5vh 0 10vh 0;
+}
+/*Div housing the product cards*/
+.Shop_product_cards_div {
+    width: 99vw;
+    height: 70vh;
+}
+
+.Shop_section ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.Shop_section ul > li {
+    margin: 0 5vh;
+    width: 40%;
+    height: 100%;
+}
+/*The styles for the product card div*/
+.Product_card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
+    border-radius: 2vh;
+    transition: all 0.15s ease-in-out;
+}
+
+.Product_card:hover {
+    transform: scale(1.03);
+}
+
+.Product_card > img {
+    border-top-left-radius: 2vh;
+    border-top-right-radius: 2vh;
+    object-fit: cover;
+    width: 100%;
+    height: 60%;
+    transition: all 0.15s ease-in-out;
+}
+
+.Product_card > hr {
+    margin: 3vh auto 2vh auto;
+}
+
+.Product_card > h3 {
+    color: #0c5270;
+    margin: 0vh 2vh 2vh 5vh;
+    font-size: 35px;
+}
+
+.Product_card > p {
+    color: black;
+    font-size: 25px;
+    margin: 0vh 2vh 2vh 5vh;
+}
+
+.Product_card > button {
+    margin: 2vh 2vh auto 5vh;
+    border: none;
+    background-color: rgb(252, 38, 0);
+    width: 40%;
+    font-size: 25px;
+    height: 5vh;
+    border-radius: 3vh;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    opacity: 0.8;
+    transition: all 0.15s ease-in-out;
+}
+
+.Product_card > button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+/*Styles for the div housing the shop all link*/
+.Shop_link_div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Shop_link_div> hr {
+    margin: 5vh 0;
+}
+
+.Shop_link_div> a {
+    color: black;
+    font-size: 35px;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: all 0.15s ease-in-out;
+}
+
+.Shop_link_div> a:hover {
+    opacity: 1;
+}
+/**That is all the styles for the home page.**/
+
+/**Styles for the feedback form**/
+.FeedBack_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FeedBack_main input {
+    cursor: text;
+}
+
+.Feedback_form_sectn {
+    border-radius: 2vh;
+    margin: 15vh 0;
+    background-color: #4fddf3;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    height: max-content;
+    overflow: hidden;
+}
+
+.Feedback_form_div {
+    background-color: white;
+    opacity: 0.8;
+    box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    width: max-content;
+}
+
+.Feedback_form_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.Feedback_form_header > img {
+    border-radius: 1vh;
+    margin: 5vh 0;
+    width: 20vh;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.Feedback_form_header > hr {
+    margin: 5vh auto 5vh auto;
+    width: 40%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #0c5270;
+}
+
+.Feedback_form_header > h1 {
+    color: #0c5270;
+    font-size: 65px;
+}
+
+.Feedback_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 0 5vh 0;
+}
+
+.Feedback_form > p {
+    color: #0c5270;
+    font-size: 25px;
+    margin-bottom: 5vh;
+}
+.Name_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Name_div> div {
+    padding: 5vh;
+}
+
+.Name_div> div > label, .Email_div > label, .Feedback_section > label {
+    color: #0c5270;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.Name_div> div > input, .Email_div > input, .Feedback_section > select  {
+    border: none;
+    background-color: rgb(71, 77, 110);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    height: 5vh;
+    width: 20vw;
+    border-radius: 3vh;
+    text-indent: 2vh;
+    margin: 2vh 0;
+    color: white;
+    font-size: 20px;
+}
+
+.Name_div> div > input::placeholder, .Email_div > input::placeholder {
+    color: white;
+    opacity: 0.8;
+}
+
+.Feedback_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4vh;
+}
+
+.Feedback_section > select {
+    margin-bottom: 5vh;
+}
+
+.Feedback_section > select > option {
+    background-color: #81a9e8;
+    color: black;
+}
+
+.Feedback_section > textarea {
+    border: none;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    height: 35vh;
+    width: 30vw;
+    border-radius: 3vh;
+    text-indent: 2vh;
+    margin: 2vh 0;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 2vh;
+    margin-bottom: 5vh;
+}
+
+.Rating_div > p {
+    color: #0c5270;
+    font-size: 25px;
+    margin-bottom: 2vh;
+}
+
+.Rating_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Radio_button_container {
+    position: relative;
+}
+
+.Radio_button_container > input {
+    position: absolute;
+    cursor: pointer;
+    top: 42%;
+    left: 42%;
+    transform: translate(-42%, -42%);
+    z-index: 1;
+    transform: scale(3.6);
+    opacity: 0.5;
+}
+
+.Rating_label {
+    position: relative;
+    display: block;
+    text-align: center;
+    z-index: 2;
+    cursor: pointer;
+    color: #0c5270;
+    font-size: 20px;
+    border: 2px solid #0c5270;
+    padding: 1vh 2vh;
+    margin: 2vh 2vh;
+    border-radius: 3vh;
+}
+
+.Rating_label.active {
+    color: white;
+    background-color: #0c5270;
+}
+
+input[type="submit"] {
+    margin-top: 5vh;
+}
+
+.Submit_sctn {
+    width: 100%;
+}
+
+.Submit_sctn > hr {
+    margin: 2vh 0;
+    width: 100%;
+    border: 1px solid black;
+    opacity: 0.5;
+}
+
+.Submit_sctn > input {
+    cursor: pointer;
+    margin: 2vh 0;
+    width: 30%;
+    height: 6vh;
+    border-radius: 3vh;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    background-color: rgb(255, 68, 0);
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.15s ease-in-out;
+}
+
+.Submit_sctn > input:hover {
+    transform: scale(1.1);
+}
+
+.Submit_sctn > input:active {
+    opacity: 0.8;
+}

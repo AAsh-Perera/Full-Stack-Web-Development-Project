@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            SDG 14: Life Below Water
+        </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Ashan Perera, Uow ID: w2082259">
+        <!-- the below meta tag will be used to make this page responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow"> <!-- this tells web crawlers to intex the page and follow links-->
+        <meta name="description" content="A website dedicated to promoting the conservation and sustainable use of oceans, seas, and marine resources for sustainable development. This will be the author's submission for the CW 23/24 for the module Web Design and Development">
+        <link rel="icon" href="Assets/Site Wide Assets/Favicon-Rounded.png">
+        <link rel="stylesheet" href="CSS Files/style.css">
+    </head>
+
+    <body>
+        <!--The "Header_container" section will be used to check if he mouse is hoveing over that area-->
+        <section id="Header_container">
+            <header id="header">
+                <nav>
+                    <section class="Navigation_bar_section">
+                        <a href="home.html">
+                            <img src="Assets/Site Wide Assets/Logo.png" alt="logo" class="Nav_logo">
+                        </a>
+                        <div class="Nav_link_container">
+                            <ul class="Nav_links">
+                                <li>
+                                    <a href="home.html" class="Active">Home</a>
+                                </li>
+                                <li>
+                                    <a href="shop.html">Shop</a>
+                                </li>
+                                <li>
+                                    <a href="gallery.html">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="Dropdown_arw" onclick=openMoreMenu()>
+                                        More  
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="More_menu">
+                            <ul class="Side_menu_links">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="X_icon" onclick=closeMoreMenu() height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                                <li>
+                                    <a href="#" class="Dropdown_arw" onclick=openContentMenu()>Content Pages  </a>
+                                </li>
+                                <li>
+                                    <a href="sitemap.html">
+                                        Site Map
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="team.html">
+                                        Team
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Content_menu">
+                            <ul class="Side_menu_links">
+                                <li >
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="X_icon" onclick=closeContentMenu() height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                                <li>
+                                <li>
+                                    <a href="Content Pages/content page one.html">
+                                        Content Page One
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Content Pages/content page two.html">
+                                        Content Page Two
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Content Pages/content page three.html">
+                                        Content Page Three
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Content Pages/content page four.html">
+                                        Content Page Four
+                                    </a>
+                                </li>   
+                            </ul>
+                        </div>
+                    </section>
+                </nav>
+                <div class="Gradient_box"></div>
+            </header>
+        </section>
+
+        <main>
+            <section class="Mission_section">
+                <div class="BG_vid_01">
+                    <video autoplay muted loop id = "Vid_01">
+                        <source src="Assets/Home Page Assets/Vids/HomePage_Vid_One.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+                <div class="HomSc_spacer_01"></div>
+                
+                <div class="Scroll_dwn_btn_div">
+                    <img src="Assets/Home Page Assets/Gifs/Scroll_down.gif" alt="Scroll Down Button" title="Scroll Further" class="Scroll_dwn_btn" id="Scroll_to_target">
+                </div>
+                
+                <div class="Mission_div">
+                    <div class="Mission_img_slideshow_div">
+                        <div class="Slides fade">
+                            <img src="Assets/Home Page Assets/Imgs/Slideshow-01/img-01.jpg" alt="slide show image 01">
+                        </div>
+                        <div class="Slides fade">
+                            <img src="Assets/Home Page Assets/Imgs/Slideshow-01/img-02.jpg" alt="slide show image 02">
+                        </div>
+                        <div class="Slides fade">
+                            <img src="Assets/Home Page Assets/Imgs/Slideshow-01/img-03.jpg" alt="slide show image 03">
+                        </div>
+                        <div class="Slides fade">
+                            <img src="Assets/Home Page Assets/Imgs/Slideshow-01/img-04.jpg" alt="slide show image 04">
+                        </div>
+                    </div>
+                    <div class="Mission_text_div">
+                        <h2>Our Mission</h2>
+                        <hr>
+                        <h1 id="target">
+                            Conserve and sustainably use the oceans, seas and marine resources for sustainable development.
+                        </h1>
+                        <p>
+                            We are dedicated to protecting our oceans and marine life, ensuring their sustainable use for the prosperity of future generations. Our mission is to harmonize human activity with the ocean’s natural balance, safeguarding its treasures and supporting coastal communities.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="Gallery_section">
+                <div class="Gallery_section_div">
+                    <div class="Gallery_section_text_div">
+                        <h2>
+                            Here are some top picks from our gallery.
+                        </h2>
+                        <a href="gallery.html">See More.</a>
+                    </div>
+
+                    <div class="Gallery_section_images_div">
+                        <div class="Image_slider">
+                            <div class="Slider_list">
+                                <div class="Slider_item fade">
+                                    <img src="Assets/Home Page Assets/Imgs/Gallery Images/Img-01.jpg" alt="Gallery image 02">
+                                </div>
+                                <div class="Slider_item fade">
+                                    <img src="Assets/Home Page Assets/Imgs/Gallery Images/Img-02.jpg" alt="Gallery image 02">
+                                </div>
+                                <div class="Slider_item fade">
+                                    <img src="Assets/Home Page Assets/Imgs/Gallery Images/Img-03.jpg" alt="Gallery image 03">
+                                </div>
+                                <div class="Slider_item fade">
+                                    <img src="Assets/Home Page Assets/Imgs/Gallery Images/Img-04.jpg" alt="Gallery image 04">
+                                </div>
+                                <div class="Slider_item fade">
+                                    <img src="Assets/Home Page Assets/Imgs/Gallery Images/Img-05.jpg" alt="Gallery image 05">
+                                </div>
+                            </div>
+                            
+                            <!--Buttons for the Image Slider-->
+                            <div class="Slider_buttons">
+                                <button id="Previous">&lt;</button>
+                                <button id="Next">&gt;</button>
+                            </div>
+                            <!--Dots for the Slider-->
+                            <div class="Slider_dots_div">
+                                <ul class="Slider_dots">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="Shop_section">
+                <div class="Shop_bg_img">
+                    <div class="Shop_main_div">
+                        <div class="Shop_text_div">
+                            <h2>
+                                Browse Our Shop
+                            </h2>
+                            <p>
+                                Crafted sustainably, 50% of our profits support marine conservation!
+                            </p>
+                            <hr>
+                        </div>
+    
+                        <div class="Shop_product_cards_div">
+                            <ul class="Product_card_list">
+                                <li>
+                                    <div class="Product_card">
+                                        <img src="Assets/Home Page Assets/Imgs/Shop images/ocean-animal-tote-bags.jpg" alt="Ocean Animal Tote Bag">
+                                        <hr>
+                                        <h3>
+                                            Ocean Animal Tote Bags
+                                        </h3>
+                                        <p>
+                                            &pound; 12.00
+                                        </p>
+                                        <button class="Buy_btn">Buy Now</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Product_card">
+                                        <img src="Assets/Home Page Assets/Imgs/Shop images/mermaid-tail-blanket.jpg" alt="Mermaid Tail Blanket">
+                                        <hr>
+                                        <h3>
+                                            Mermaid Tail Whool Blanket
+                                        </h3>
+                                        <p>
+                                            &pound; 22.00
+                                        </p>
+                                        <button class="Buy_btn">Buy Now</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="Product_card">
+                                        <img src="Assets/Home Page Assets/Imgs/Shop images/ocean-wave-caps.jpg" alt="Ocean Wave Cap">
+                                        <hr>
+                                        <h3>
+                                            Ocean Wave Baseball Cap
+                                        </h3>
+                                        <p>
+                                            &pound; 15.00
+                                        </p>
+                                        <button class="Buy_btn">Buy Now</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="Shop_link_div">
+                            <hr>
+                            <a href="#" title="Vist Our Shop">Shop All Items.</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="Footer_container">
+
+                <!--back to top-->
+                <div class="Back_tt_row">
+                    <a href="#" class="Btt_link" title="Go Back to The Top" id="Scroll_to_target">&uarr; &nbsp; <u>Back to Top</u></a>
+                </div>
+
+                <hr class="Footer_hr">
+
+                <!--other footer elements-->
+                <div class="Items_row">
+
+                    <!--Learn more section-->
+                    <div class="Learn_more_section">
+                        <p class="Footer_heading">
+                            Click the Images Below to Learn More.
+                        </p>
+
+                        <section class="Learn_more_img_section">
+                            <a href="https://sdgs.un.org/goals/goal14" title="Lean more about the United Nations SDG 14" target="_blank">
+                                <img src="Assets/Site Wide Assets/Logo_simplified.png" alt="Site Logo simplified">
+                            </a>
+                            <a href="https://sdgs.un.org/goals" title="Learn More about the 14 SDGs of the UN" target="_blank">
+                                <img src="Assets/Site Wide Assets/UN_SDG_Logo.png" alt="UN SDG Logo">
+                            </a>
+                        </section>
+                        <section class="Learn_more_info_section">
+                            <p class="Footer_para">
+                                The SDG icons and logos used on this website are owned by the United Nations. They are used for non-commercial and non-profit purposes in accordance with the United Nations' <a href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/E_SDG_Guidelines_Sep20238.pdf" title="Guidelines for Using The United Nations SDG Logos" target="_blank">guidelines</a>.
+                            </p>
+                        </section>
+                    </div>
+
+                    <!-- Feedback section -->
+                    <div class="Feedback_section">
+                        <p class="Footer_heading">Your opinion matters to us!</p>
+                        <p class="Footer_para">
+                            Your feedback is key to our growth. How has your experience been with our site?
+                        </p>
+                        <a href="feedback.html" title="Goto Feedback Form">
+                            <button class="Feedback_btn">
+                                Send FeedBack
+                             </button>
+                        </a>
+                    </div>
+
+                    <div class="Contact_section">
+                        <p class="Footer_heading">Want us to get intouch with you?</p>
+                        <form class="Contact_form" onsubmit="submitForm(); return false;">
+                          <label for="email">
+                            Send Us Your Email:
+                          </label>
+                          <br>
+                          <input type="email" id="cf_email" name="email" placeholder="garry.the.snail@abc123.com" required>
+                          <br>
+                          <label for="message">
+                            And a Small Message:
+                          </label>
+                          <br>
+                          <input type="text" id="cf_message" name="message" placeholder="Type something..." required>
+                          <br>
+                          <input type="submit" value="Submit" class="Submit_btn">
+                        </form>
+                      </div>
+                </div>
+
+                <hr class="Footer_hr">
+                
+                <div class="Page_editor_row">
+                    <p>Want to know more about who made this page? Visit his editor page <a href="External HTML Files/editor_Ashane.Html" title="Ashane's Editor Page." target="_blank">here!</a></p>
+                    <p>&copy; 2024 All rights reserved by the authors</p>
+                </div>
+            </div>
+        </footer>
+        <script src="JS Files/home_script.js"></script>
+    </body>
+</html>

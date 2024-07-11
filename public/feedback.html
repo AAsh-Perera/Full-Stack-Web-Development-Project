@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            SDG 14: Life Below Water
+        </title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Ashan Perera, Uow ID: w2082259">
+        <!-- the below meta tag will be used to make this page responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="description" content="The feedback form for the SDG14: Life Bellow Water website">
+        <link rel="icon" href="Assets/Site Wide Assets/Favicon-Rounded.png">
+        <link rel="stylesheet" href="CSS Files/style.css">
+    </head>
+
+    <body>
+        <section id="Header_container">
+            <header id="header">
+                <nav>
+                    <section class="Navigation_bar_section">
+                        <a href="home.html">
+                            <img src="Assets/Site Wide Assets/Logo.png" alt="logo" class="Nav_logo">
+                        </a>
+                        <div class="Nav_link_container">
+                            <ul class="Nav_links">
+                                <li>
+                                    <a href="home.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">Shop</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="#">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="Dropdown_arw" onclick=openMoreMenu()>
+                                        More  
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="More_menu">
+                            <ul class="Side_menu_links">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="X_icon" onclick=closeMoreMenu() height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                                <li>
+                                    <a href="#" class="Dropdown_arw" onclick=openContentMenu()>Content Pages  </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Site Map
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        Team
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="Content_menu">
+                            <ul class="Side_menu_links">
+                                <li >
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="X_icon" onclick=closeContentMenu() height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                                <li>
+                                <li>
+                                    <a href="Content Pages/content page one.html">
+                                        Content Page One
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Content Pages/content page two.html">
+                                        Content Page Two
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Content Pages/content page three.html">
+                                        Content Page Three
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Content Pages/content page four.html">
+                                        Content Page Four
+                                    </a>
+                                </li>   
+                            </ul>
+                        </div>
+                    </section>
+                </nav>
+                <div class="Gradient_box"></div>
+            </header>
+        </section>
+        
+        <main class="FeedBack_main">
+            <section class="Bg_vid">
+                <div class="BG_vid_01">
+                    <video autoplay muted loop id = "Vid_01">
+                        <source src="Assets/Home Page Assets/Vids/Feedback-page-bg-vid.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+
+            <section class="Feedback_form_sectn">
+                <div class="Feedback_form_div">
+                    <div class="Feedback_form_header">
+                        <img src="../Assets/Site Wide Assets/Logo-Animated.gif" alt="Animated SDG 14 Logo">
+                        <h1>
+                            Feedback
+                        </h1>
+                        <hr>
+                    </div>
+
+                    <form action="../Python Files/process_form.py" class="Feedback_form" method="post">
+                        <p>
+                            Note:</strong> Fields marked with an asterisk (*) are required.
+                        </p>
+                        <div class="Name_div">
+                            <div class="Fname_div">
+                                <label for="fname">
+                                    First Name *: &nbsp; 
+                                </label>
+                                <br>
+                                <input type="text" name="fname" id="fname" placeholder="Ex: Lemon" required>
+                            </div>
+                            <div class="Lname_div">
+                                <label for="lname">
+                                    Last Name *: &nbsp;
+                                </label>
+                                <br>
+                                <input type="text" name="lname" id="lname" placeholder="Ex: Grab" required>
+                            </div>
+                        </div>
+                        <div class="Email_div">
+                            <label for="fb_email">
+                                Email *: 
+                            </label>
+                            <br>
+                            <input type="email" name="FB_form_email" id="fb_email" placeholder="Ex: lemongrab@candykingdom.com" required>
+                        </div>
+                        <div class="Feedback_section">
+                            <label for="subject">
+                                Subject of Feedback *:
+                            </label>
+                            <select name="feedback-subject" id="subject">
+                                <option value="website-issue">Website Issue</option>
+                                <option value="content-quality">Content Quality</option>
+                                <option value="technical-issues">Technical Issues</option>
+                                <option value="design-usability">Design and Usability</option>
+                                <option value="customer-service">Customer Service</option>
+                                <option value="product-feedback">Product Feedback</option>
+                                <option value="general-feedback">General Feedback</option>
+                                <option value="suggestions">Suggestions</option>
+                            </select>
+                            <label for="fb_message">Message:</label>
+                            <textarea name="fb_message" id="fb_message" placeholder="Type something..."></textarea>
+                            <div class="Rating_div">
+                                <p>
+                                    How Satisfied are you with our website, On a scale of 1-5?
+                                </p>
+                                <div class="Rating_container">
+                                    <div class="Radio_button_container">
+                                        <label for="rating1" class="Rating_label">1</label>
+                                        <input type="radio" class="Rating_radio" name="rating" id="rating1" value="1 - Not Satisfied at all" required>
+                                    </div>
+                                    <div class="Radio_button_container">
+                                        <label for="rating2" class="Rating_label">2</label>
+                                        <input type="radio" class="Rating_radio" name="rating" id="rating2" value="2 - Slightly Satisfied">
+                                    </div>
+                                    <div class="Radio_button_container">
+                                        <label for="rating3" class="Rating_label">3</label>
+                                        <input type="radio" class="Rating_radio" name="rating" id="rating3" value="3 - Neutral">
+                                    </div>
+                                    <div class="Radio_button_container">
+                                        <label for="rating4" class="Rating_label">4</label>
+                                    <input type="radio" class="Rating_radio" name="rating" id="rating4" value="4 - Satisfied">
+                                    </div>
+                                    <div class="Radio_button_container">
+                                        <label for="rating5" class="Rating_label">5</label>
+                                        <input type="radio" class="Rating_radio" name="rating" id="rating5" value="5 - Extremely Satisfied">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Submit_sctn">
+                                <hr>
+                                <input type="submit" value="Submit">
+                                <p>
+                                    or
+                                </p>
+                                <button class="Send_email_btn">Send as an Email</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="Feedback_form_footer">
+
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="Footer_container">
+
+                <!--back to top-->
+                <div class="Back_tt_row">
+                    <a href="#" class="Btt_link" title="Go Back to The Top" id="Scroll_to_target">&uarr; &nbsp; <u>Back to Top</u></a>
+                </div>
+
+                <hr class="Footer_hr">
+
+                <!--other footer elements-->
+                <div class="Items_row">
+
+                    <!--Learn more section-->
+                    <div class="Learn_more_section">
+                        <p class="Footer_heading">
+                            Click the Images Below to Learn More.
+                        </p>
+
+                        <section class="Learn_more_img_section">
+                            <a href="https://sdgs.un.org/goals/goal14" title="Lean more about the United Nations SDG 14" target="_blank">
+                                <img src="../Assets/Site Wide Assets/Logo_simplified.png" alt="Site Logo simplified">
+                            </a>
+                            <a href="https://sdgs.un.org/goals" title="Learn More about the 14 SDGs of the UN" target="_blank">
+                                <img src="../Assets/Site Wide Assets/UN_SDG_Logo.png" alt="UN SDG Logo">
+                            </a>
+                        </section>
+                        <section class="Learn_more_info_section">
+                            <p class="Footer_para">
+                                The SDG icons and logos used on this website are owned by the United Nations. They are used for non-commercial and non-profit purposes in accordance with the United Nations' <a href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2023/09/E_SDG_Guidelines_Sep20238.pdf" title="Guidelines for Using The United Nations SDG Logos" target="_blank">guidelines</a>.
+                            </p>
+                        </section>
+                    </div>
+
+                    <!-- Feedback section -->
+                    <div class="Feedback_section">
+                        <p class="Footer_heading">Your opinion matters to us!</p>
+                        <p class="Footer_para">
+                            Your feedback is key to our growth. How has your experience been with our site?
+                        </p>
+                        <a href="feedback.html" title="Goto Feedback Form">
+                            <button class="Feedback_btn">
+                                Send FeedBack
+                             </button>
+                        </a>
+                    </div>
+
+                    <div class="Contact_section">
+                        <p class="Footer_heading">Want us to get in touch with you?</p>
+                        <form class="Contact_form">
+                            <label for="cf_email">
+                                Send Us Your Email:
+                            </label>
+                            <br>
+                            <input type="email" id="cf_email" name="email" placeholder="garry.the.snail@abc123.com" required>
+                            <br>
+                            <label for="cf_message">
+                                And a Small Message:
+                            </label>
+                            <br>
+                            <input type="text" id="cf_message" name="message" placeholder="Type something..." required>
+                            <br>
+                            <input type="submit" value="Submit" class="Submit_btn">
+                        </form>
+                    </div>
+                </div>
+
+                <hr class="Footer_hr">
+                
+                <div class="Page_editor_row">
+                    <p>Want to know more about who made this page? Visit his editor page <a href="External HTML Files/editor_Ashane.Html" title="Ashane's Editor Page." target="_blank">here!</a></p>
+                    <p>&copy; 2024 All rights reserved by the authors</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script src="JS Files/home_script.js"></script>
+</html>
